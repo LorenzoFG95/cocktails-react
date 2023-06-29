@@ -1,0 +1,16 @@
+.Search {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px;
+  gap: 15px;
+  max-width: 300px;
+}
+
+.cocktail {
+  padding: 20px;
+}
+.not_found {
+  margin: 20px;
+  color: red;
+}

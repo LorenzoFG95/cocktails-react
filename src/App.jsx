@@ -3,15 +3,24 @@ import { useState } from "react";
 import ProductSection from "./components/productSection";
 import ProductList from "./components/productList";
 import Contacts from "./components/contacts/Contacts";
+import Search from "./components/search";
 import "./App.css";
 
 function App() {
-  const [productSection, setProductSection] = useState("");
+  const [productSection, setProductSection] = useState("search");
+  const [cocktailName, setCocktailName] = useState("margarita");
 
   const onRender = () => {
     switch (productSection) {
       case "contacts":
         return <Contacts />;
+      case "search":
+        return (
+          <Search
+            cocktailName={cocktailName}
+            setCocktailName={setCocktailName}
+          />
+        );
       case "":
         return (
           <>
@@ -32,9 +41,19 @@ function App() {
 
   return (
     <div className="App">
-      <ul>
-        <li onClick={() => setProductSection("")}>Home</li>
-        <li onClick={() => setProductSection("contacts")}>Contacts</li>
+      <ul className="header">
+        <li className="home__list" onClick={() => setProductSection("")}>
+          Home
+        </li>
+        <li
+          className="home__list"
+          onClick={() => setProductSection("contacts")}
+        >
+          Contacts
+        </li>
+        <li className="home__list" onClick={() => setProductSection("search")}>
+          Search
+        </li>
       </ul>
       {onRender()}
     </div>

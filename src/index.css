@@ -2,10 +2,13 @@ body {
   margin: 0;
 }
 
-/* Tablet */
-@media (min-width: 767px) {
+.header {
+  display: flex;
+  max-width: 300px;
+  justify-content: space-between;
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
+.home__list {
+  list-style-type: none;
+  cursor: pointer;
 }
