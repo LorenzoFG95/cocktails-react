@@ -5,7 +5,6 @@ const Search = ({ cocktailName, setCocktailName }) => {
   const [searchInput, setSearchInput] = useState("");
   const [cocktail, setCocktail] = useState("");
   const [searched, setSearched] = useState(false);
-  console.log(cocktail);
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
