@@ -4,11 +4,17 @@ import ProductSection from "./components/productSection";
 import ProductList from "./components/productList";
 import Contacts from "./components/contacts/Contacts";
 import Search from "./components/search";
+import Filters from "./components/filters";
 import "./App.css";
 
 function App() {
-  const [productSection, setProductSection] = useState("search");
+  const [productSection, setProductSection] = useState("");
   const [cocktailName, setCocktailName] = useState("margarita");
+  const [activeFilters, setActiveFilters] = useState({
+    rum: true,
+    vodka: true,
+    gin: true,
+  });
 
   const onRender = () => {
     switch (productSection) {
@@ -24,9 +30,19 @@ function App() {
       case "":
         return (
           <>
-            <ProductList name="rum" setProductSection={setProductSection} />
-            <ProductList name="vodka" setProductSection={setProductSection} />
-            <ProductList name="gin" setProductSection={setProductSection} />
+            <Filters
+              activeFilters={activeFilters}
+              setActiveFilters={setActiveFilters}
+            />
+            {activeFilters.rum && (
+              <ProductList name="Rum" setProductSection={setProductSection} />
+            )}
+            {activeFilters.vodka && (
+              <ProductList name="Vodka" setProductSection={setProductSection} />
+            )}
+            {activeFilters.gin && (
+              <ProductList name="Gin" setProductSection={setProductSection} />
+            )}
           </>
         );
       default:

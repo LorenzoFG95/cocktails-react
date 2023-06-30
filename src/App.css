@@ -1,0 +1,6 @@
+.home__list {
+  user-select: none;
+}
+.home__list:hover {
+  text-decoration: underline;
+}

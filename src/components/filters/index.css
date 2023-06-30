@@ -1,0 +1,19 @@
+.filters {
+  display: flex;
+  margin: 20px;
+  justify-content: space-evenly;
+}
+
+.filter {
+  background-color: darkolivegreen;
+  color: whitesmoke;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filtered {
+  background-color: antiquewhite;
+  color: black;
+}
